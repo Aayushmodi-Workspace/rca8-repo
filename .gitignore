@@ -1,0 +1,21 @@
+# Simulation artifacts
+*.fsdb
+*.vcd
+*.vpd
+work/
+WORK/
+csrc/
+simv*
+DVEfiles/
+*.log
+*.key
+
+# Synopsys tool outputs (regenerate via scripts, don't commit)
+sim/DC/results/
+sim/ICCII/results/
+sim/PT/results/
+*.ndm/
+
+# OS files
+.DS_Store
+Thumbs.db

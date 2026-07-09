@@ -1,0 +1,13 @@
+Experiment ID,Cells Excluded,SDC File Used,Library Corner,Clock Period (ns),Compile Mode,Total Area,Comb. Cell Count,Leaf Cell Count,Buffers,Worst Setup Slack (ns),Observations
+Case-1,Using all cells,No,FF,2.4,Compile,145.291833,12,2600,,Unconstrained,"Baseline using all cells, lowest compile time, minimal area/power, unconstrained"
+Case-2,"FADD, HADD",No,FF,2.4,Compile,145.291833,12,2600,,Unconstrained,"Same performance as Case-1, no optimization gain"
+Case-3,"FADD, HADD, AO, OA",No,FF,2.4,Compile,154.086443,20,3400,,Unconstrained,"Area and compile time increase slightly, no timing violations"
+Case-4,"FADD, HADD, AO, OA, OR, AND",No,FF,2.4,Compile,152.960509,23,3703,,Unconstrained,"First case with hold violations"
+Case-5,"FADD, HADD, AO, OA, OR, AND, MUX",No,FF,2.4,Compile,152.960509,23,3703,,Unconstrained,"Same as Case-4, optimization plateau"
+Case-6,"FADD, HADD, AO, OA, OR, AND",Yes,FF,2.4,Compile Ultra,151.270144,20,3400,,1.42,"Ultra compile improves performance, no violations"
+Case-7,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,SS,2.4,Compile Ultra,228.442948,52,662,17,-0.68,"SS corner, high area, significant timing violations"
+Case-8,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,TT,1,Compile Ultra,230.951384,48,623,15,-0.18,"TT corner at 1ns, high area/violations"
+Case-9,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,TT,1.5,Compile,168.369375,29,4307,,-0.02,"Area/violations reduced, slack near zero"
+Case-10,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,TT,0.5,Compile,192.385024,27,4106,,-0.62,"Tight 0.5ns constraint, high area/violations"
+Case-11,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,TT,0.5,Compile Ultra,227.012687,49,632,15,-0.62,"Ultra compile at 0.5ns, further increased area"
+Case-12,"FADD, HADD, AO, OA, OR, AND, MUX",Yes,TT,3,Compile Ultra,160.921724,23,3703,,1.63,"Best slack, lowest area/violations among constrained cases"
